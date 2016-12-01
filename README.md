@@ -62,10 +62,20 @@ Edit the file in the TrackMeNot, then copy it into the compressed .xpi file.
 
 The trackmenot.js contains a number of variables to tweak, the first is **var zeitgeist** an array of "influential" words (need audit) 
 
+##### timeout
+
+The next variable to adjust is timeout. Any common factor can indicate usage, a range is harder to eleiminate. When adjusting less important, or harder to monitor parameters consider that the change from norm could also be trackable. May be worth lengthening. 
+
+var tmn_timeout = 6000;
+
+
+
 
 #### Editing options.html
 
 The options.html is the next file which can be adjusted.
+
+##### zeitgeist
 
 Note : that it is sometime difficult to update a hierarchy of folders into a archived or compressed file. I had to back up the TrackMeNot archive file, delete the whole data directory, then import the new data directory including the updated option.html file. 
 
