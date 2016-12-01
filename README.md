@@ -34,20 +34,36 @@ Without changing the code a new user should update the default blacklist, the rs
 
 #### Updateable files
 
+Find where the firefox extensions are stored. On Ubuntu 16.04 :
 
-.mozilla/firefox/20fzsdo8.dev-edition-default/extensions/
+    .mozilla/firefox/20fzsdo8.dev-edition-default/extensions/
 
-Git clone the TrackMeNot directory.
+
+Install the source code for the TrackMeNot. Git clone the TrackMeNot directory.
+
 
 note that the files are in the compressed directory
 
-trackmenot@mrl.nyu.edu.xpi
+      trackmenot@mrl.nyu.edu.xpi
+
+
+Clone the source code       
+      
+git clone https://github.com/wrapperband/TrackMeNot.git
+
+The files can be edited and copied into the running system.
+
 
 It is relatively easy to copy in an updated version of trackmenot.js . This file is in the root director so arc viewer can handle it.
 
 Edit the file in the TrackMeNot, then copy it into the compressed .xpi file.
 
+#### Editing trackmenot.js
+
 The trackmenot.js contains a number of variables to tweak, the first is **var zeitgeist** an array of "influential" words (need audit) 
+
+
+#### Editing options.html
 
 The options.html is the next file which can be adjusted.
 
@@ -64,7 +80,7 @@ On line 157 of options.html you can see the modified time stamps from the  origi
                                                         <option data-l10n-id="tmn.option.freq.1ph" id="t5" value="3600000"> </option>
 </select>
 
-Customise the repetition times, in the future the system could also vary these times to make it a less "trackable" feature.
+Customise the repetition times, in the future the system could also vary these times to make it a less "track-able" feature.
 
 #### Adding none search links
 
@@ -76,4 +92,8 @@ Ideally the bot should follow links, which is envisaged for the Browser Bot vers
 #### Trouble
 
 Don't let the power get to your head and set click rates too high.
+
+#### List of alternate rss feeds
+
+
 
