@@ -68,7 +68,11 @@ The next variable to adjust is timeout. Any common factor can indicate usage, a 
 
 var tmn_timeout = 6000;
 
+##### burstTimeout
 
+A low value parameter but common factor. Increased slightly.
+
+var burstTimeout = 6000;
 
 
 #### Editing options.html
