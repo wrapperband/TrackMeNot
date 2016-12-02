@@ -110,4 +110,8 @@ Don't let the power get to your head and set click rates too high.
 #### List of alternate rss feeds
 
 
+#### Anti Bot detection
+
+Some movement of mouse is required on each page.
+
 
