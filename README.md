@@ -94,7 +94,7 @@ On line 157 of options.html you can see the modified time stamps from the  origi
                                                         <option data-l10n-id="tmn.option.freq.1ph" id="t5" value="3600000"> </option>
 </select>
 
-Customise the repetition times, in the future the system could also vary these times to make it a less "track-able" feature.
+Customise the repetition times, in the future the system could also vary these times to make it a less "track-able" feature. In the future simply adding or removing  a small random rmber will amke each person and session have different base timings. The noise will make it more difficult to identify. 
 
 #### Adding none search links
 
@@ -109,9 +109,10 @@ Don't let the power get to your head and set click rates too high.
 
 #### List of alternate rss feeds
 
+https://ec.europa.eu/research/index.cfm?pg=rss
 
 #### Anti Bot detection
 
-Some movement of mouse is required on each page.
+Some movement of mouse is required on each page. Scroll down searches.
 
 
