@@ -120,7 +120,20 @@ function initOptions() {
 
 Showing some slight modifications to initial values to customise personal versions. These should be automatically, or personally configurable,, the blacklist defaults and function requires further audit and consideration.
 
-		
+#### Customising number of search terms to use
+
+trackmenot.js function doSearch()    
+
+doSearch() contains the  algorithm to decide the number of search terms to use.  
+
+
+Adjust the number of words before random further words are added.
+if (queryWords.length > 3) {
+
+
+Adjust the number of additional parameter range.
+var unsatisfiedNumber = roll(1, 4);
+
 		
 ### TrackMeNot Audit : Comparison of Source Code with released version.  
 
