@@ -115,4 +115,11 @@ https://ec.europa.eu/research/index.cfm?pg=rss
 
 Some movement of mouse is required on each page. Scroll down searches.
 
+#### How and where are custom settings stored in TrackMeNot
 
+The current settings are stored in a json file
+    store.json
+
+For Ubuntu directory is :
+
+    .mozilla/firefox/jetpack/simple.storage/
