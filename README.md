@@ -103,6 +103,52 @@ As long as the text "trackmenot" is included in the description the link will be
 Ideally the bot should follow links, which is envisaged for the Browser Bot version.
 
 
+#### Customising Initiation Options  
+
+trackmenot.js  
+function initOptions() {
+		enabled = true;
+		tmn_timeout = 60034;
+		burstMode = true;
+		setSearchEngine();
+		useTab = false;
+		useBlackList = true;
+		useDHSList = false;
+		kwBlackList = ['satan', 'neo', 'acordians'];
+		saveLogs = true;
+		disableLogs = false;
+
+Showing some slight modifications to initial values to customise personal versions. These should be automatically, or personally configurable,, the blacklist defaults and function requires further audit and consideration.
+
+		
+		
+### TrackMeNot Audit : Comparison of Source Code with released version.  
+
+#### Inconsistencies of Firefox version from Source code  
+
+trackmenot.js 
+Source code
+Array.prototype.contains = function(obj) {
+		var i = this.length;
+		while (i--) {
+			if (this[i] === obj) {
+				return true;
+			}
+		}
+return false;
+
+Firefox release
+	function containsObj(arr, obj) {
+		var i = arr.length;
+		while (i--) {
+			if (arr[i] === obj) {
+				return true;
+			}
+		}
+		return false;
+
+
+
 #### Trouble
 
 Don't let the power get to your head and set click rates too high.
