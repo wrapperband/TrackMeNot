@@ -123,3 +123,15 @@ The current settings are stored in a json file
 For Ubuntu directory is :
 
     .mozilla/firefox/jetpack/simple.storage/
+    
+ 
+ 
+
+Ref 1 : SimAttack: private web search under fire : https://jisajournal.springeropen.com/articles/10.1186/s13174-016-0044-x  
+
+    Albin PetitEmail author, Thomas Cerqueus, Antoine Boutet, Sonia Ben Mokhtar, 
+    David Coquil, Lionel Brunie and Harald Kosch
+
+    
+
+
