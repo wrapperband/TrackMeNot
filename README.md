@@ -134,7 +134,16 @@ if (queryWords.length > 3) {
 Adjust the number of additional parameter range.
 var unsatisfiedNumber = roll(1, 4);
 
-		
+
+#### Customising function queryToURL(url, query) {
+
+
+trackmenot.js function queryToURL(url, query) 
+if (Math.random() < 0.9)
+
+A randomising function that should be variable, or adjusted from the default value.
+
+
 ### TrackMeNot Audit : Comparison of Source Code with released version.  
 
 #### Inconsistencies of Firefox version from Source code  
