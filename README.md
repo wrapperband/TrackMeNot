@@ -169,6 +169,11 @@ Firefox release
 		}
 		return false;
 
+#### Tracking the Trackers
+
+The help button in the default version points to an external trackable web site. This is adjusted to a  local file, it is possible to download the help through Tor and replace the local file.
+
+
 
 
 #### Trouble
@@ -194,12 +199,12 @@ For Ubuntu directory is :
     
  
  
-
+Referances
 Ref 1 : SimAttack: private web search under fire : https://jisajournal.springeropen.com/articles/10.1186/s13174-016-0044-x  
 
     Albin PetitEmail author, Thomas Cerqueus, Antoine Boutet, Sonia Ben Mokhtar, 
     David Coquil, Lionel Brunie and Harald Kosch
 
-    
+Ref 2 : https://www.schneier.com/blog/archives/2006/08/trackmenot_1.html     TracMeNot : Bruce Schneier on Security
 
 
