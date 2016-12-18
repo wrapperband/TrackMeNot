@@ -143,7 +143,37 @@ if (Math.random() < 0.9)
 
 A randomising function that should be variable, or adjusted from the default value.
 
+#### Customising the Tab activated message
 
+When a Tab search is taking place a message tells it is TrackMeNot's Tab. The update includes a more positive Tab view searches message in file trackmenot.js.
+
+notifications.notify({
+                text: "This tab shows TrackMeNot's auto-generated searches",
+                
+                
+#### Customise the burst count
+
+The burst count in file trackmenot.js  seems excessive at between  3, 10, here it has been customised to between  3, 7 .
+
+		burstCount = roll(3, 7);
+
+
+#### Varying the repeat search
+		
+The function scheduleNextSearch in trackmenot.js handles the timing of the next look-up / search.
+
+	function scheduleNextSearch(delay) {
+
+TrackMeNot is modified with a line from the burst mode to randomise all further searches, in this case between 0.5 and 1.5 of the specified normal value. Over time the searches will average at the specified timing.
+
+		tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay * 3);
+		delay += delay * (Math.random() - .5);
+		tmn_searchTimer = timer.setTimeout(doSearch, delay);
+
+
+Note, it is also possible to customise error delays and the burst variability in this function.
+		
+		
 ### TrackMeNot Audit : Comparison of Source Code with released version.  
 
 #### Inconsistencies of Firefox version from Source code  

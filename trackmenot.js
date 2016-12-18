@@ -1060,6 +1060,7 @@ if (usingAustralis) {
             engine = chooseEngine(searchEngines.split(','));
         debug('NextSearchScheduled on: ' + engine);
         tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay * 3);
+	delay += delay * (Math.random() - .5);
         tmn_searchTimer = timer.setTimeout(doSearch, delay);
         tmn_timeTillNextSearch = getTimeNow() + delay;
         cout("Time till next search: "+ delay)
