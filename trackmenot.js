@@ -1045,13 +1045,15 @@ if (usingAustralis) {
 
     function scheduleNextSearch(delay) {
         if (!enabled)
-            return;
+             { 
+                  return;
+                  }
         if (delay > 0) {
             if (!isBursting()) { // randomize to approach target frequency
                 var offset = delay * (Math.random() / 2);
                 delay = parseInt(delay) + offset;
             } else { // just simple randomize during a burst           
-                delay += delay * (Math.random() - .5);
+                delay += delay * (Math.random() - 0.5);
             }
         }
         if (isBursting())
@@ -1059,8 +1061,8 @@ if (usingAustralis) {
         else
             engine = chooseEngine(searchEngines.split(','));
         debug('NextSearchScheduled on: ' + engine);
-        tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay * 3);
-	delay += delay * (Math.random() - .5);
+        tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay + (delay * (Math.random() * 2)));
+	delay += delay * (Math.random() - 0.5);
         tmn_searchTimer = timer.setTimeout(doSearch, delay);
         tmn_timeTillNextSearch = getTimeNow() + delay;
         cout("Time till next search: "+ delay)
