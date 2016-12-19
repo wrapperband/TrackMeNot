@@ -1,1 +1,1 @@
-self.port.on("TMNStopLoading",  function() { window.stop();window.history.back()}  )
+self.port.on("TMNStopLoading",  function() { window.stop()}  )  // removed ;window.history.back()  spoilt Tab view

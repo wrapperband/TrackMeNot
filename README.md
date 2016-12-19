@@ -30,11 +30,11 @@ In firefox go to tools / add-ons and search and install TrackMeNot.
 
 By making it easier to customise all variables is the first step to increasing the security of TrackMeNot. The initial audit shows too many variables are not customise-able thus making the bots actions more trackable.
 
-Without changing the code a new user should update the default blacklist, the rss feeds are also important to generate web searches.
+Without changing the code a new user should update the default blacklist, the RSS feeds are also important to generate web searches.
 
 #### Updateable files
 
-Find where the firefox extensions are stored. On Ubuntu 16.04 :
+Find where the Firefox extensions are stored. On Ubuntu 16.04 :
 
     .mozilla/firefox/20fzsdo8.dev-edition-default/extensions/
 
@@ -51,20 +51,20 @@ Clone the source code
       
 git clone https://github.com/wrapperband/TrackMeNot.git
 
-The files can be edited and copied into the running system.
+The files can be edited and copied into the running system (compressed.xpi), then the system restarted to activate the changes.
 
 
 It is relatively easy to copy in an updated version of trackmenot.js . This file is in the root director so arc viewer can handle it.
 
 Edit the file in the TrackMeNot, then copy it into the compressed .xpi file.
 
-#### Editing trackmenot.js
+#### Editing trackmenot.js  var zeitgeist
 
-The trackmenot.js contains a number of variables to tweak, the first is **var zeitgeist** an array of "influential" words (need audit) 
+The trackmenot.js is a text file contains a number of variables to tweak, the first is **var zeitgeist** an array of "influential" words (need audit) 
 
 ##### timeout
 
-The next variable to adjust is timeout. Any common factor can indicate usage, a range is harder to eleiminate. When adjusting less important, or harder to monitor parameters consider that the change from norm could also be trackable. May be worth lengthening. 
+The next variable to adjust is timeout. Any common factor can indicate usage, a range is harder to eliminate. When adjusting less important, or harder to monitor parameters consider that the change from norm could also be trackable. May be worth lengthening. 
 
 var tmn_timeout = 6000;
 
@@ -210,7 +210,7 @@ The help button in the default version points to an external trackable web site.
 
 Don't let the power get to your head and set click rates too high.
 
-#### List of alternate rss feeds
+#### List of alternate RSS feeds
 
 https://ec.europa.eu/research/index.cfm?pg=rss
 
