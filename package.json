@@ -1,5 +1,5 @@
 {
-"preferences": [
+    "preferences": [
         {
             "title": "TrackMeNot Options",
             "type": "control",
@@ -7,7 +7,7 @@
             "label": "TrackMeNot Options"
         }
     ],
-	"permissions": {"private-browsing": true},
+    "permissions": {"private-browsing": true},
     "name": "trackmenot",
     "title" : "TrackMeNot", 
     "license": "GPL 2.0", 
