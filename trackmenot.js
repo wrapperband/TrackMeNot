@@ -29,18 +29,8 @@ const { id: addonID, data } = require("sdk/self");
 
 const xulapp = require("sdk/system/xul-app");
 const { getMostRecentBrowserWindow } = require("sdk/window/utils");
-const usingAustralis = xulapp.satisfiesVersion(">=29");
 
-if (usingAustralis) {
-  var {ToggleButton} = require("sdk/ui/button/toggle");
-} else {
-  const {Widget} = require("sdk/widget");
-}
-exports.usingAustralis = usingAustralis;
-
-
-
-
+var {ToggleButton} = require("sdk/ui/button/toggle");
 
 if (!TRACKMENOT)
     var TRACKMENOT = {};
@@ -150,7 +140,10 @@ TRACKMENOT.TMNSearch = function() {
         contentURL: data.url("tmn_menu.html"),
         contentScriptFile: [data.url("jquery.js"), data.url("menu-script.js")],
         onShow: sendOptionParameters,
-		onHide:  function() { if (usingAustralis) {   widget.state('window', {checked: false});}}
+	onHide:  function() {
+          widget.state('window', {checked: false});
+        }
+    }
     });
 
     function sendLogToOption() {
@@ -215,7 +208,6 @@ const toWidgetID = id => buttonPrefix + '-' + id;
 const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(toWidgetID(id))	
 
 
-if (usingAustralis) {
   var widget = ToggleButton({
     id: "tmn_widget",
     label: "TrackMeNot",
@@ -232,18 +224,6 @@ if (usingAustralis) {
       }
     }
   });
-} else {
-  widget = Widget({
-    id: "tmn_widget",
-    label: "TrackMeNot",
-    width: 150,
-    contentURL: data.url("tmn_widget.html"),
-    contentScriptFile: [data.url("jquery.js"), data.url("widget-script.js")],
-    panel: tmn_panel
-  });
-}
-
-
 
     function sendOptionParameters() {
         debug("Sending perameters");
@@ -868,20 +848,12 @@ if (usingAustralis) {
     function updateOnErr() {
         widget.badge = 'Error';
         widget.label = 'TMN Error';
-		if (!usingAustralis)
-			widget.port.emit("UpdateText", 'TMN Error');
     }
 
     function updateOnSend(queryToSend) {
         tmn_query = queryToSend;
         widget.badge = engine;
         widget.label = engine + " '" + queryToSend + "'";
-		if (!usingAustralis) {
-			if (!burstEnabled || burstCount === 0)
-				widget.port.emit("UpdateText", " TMN: '" + queryToSend + "'");
-			else
-				widget.port.emit("UpdateText", " TMN (" + burstCount + "): '" + queryToSend + "'");
-		}
     }
 
     function doSearch() {
@@ -929,8 +901,6 @@ if (usingAustralis) {
             queryToSend = queryToSend.toLowerCase();
         if (queryToSend[0] === ' ')
             queryToSend = queryToSend.substr(1); //remove the first space ;
-		if (!usingAustralis)
-			updateIcon(url);
         if (useTab) {
             if (getTMNTab() === null)
                 createTab();
@@ -1196,8 +1166,6 @@ if (usingAustralis) {
         enabled = true;
         widget.badge = 'On';
         widget.label = 'On';
-		if (!usingAustralis)
-			widget.port.emit("UpdateText", 'TMN: On');
         scheduleNextSearch(4000);
     }
 
@@ -1208,8 +1176,6 @@ if (usingAustralis) {
             deleteTab();
         widget.badge = 'Off';
         widget.label = 'Off';
-		if (!usingAustralis)
-			widget.port.emit("UpdateText", 'TMN: Off');
         timer.clearTimeout(tmn_searchTimer);
         timer.clearTimeout(tmn_errTimeout);
     }
@@ -1368,15 +1334,11 @@ if (usingAustralis) {
             if (enabled) {
                 widget.badge = 'On';
                 widget.label = 'On';
-				if (!usingAustralis)
-					widget.port.emit("UpdateText", 'TMN: On');
                 createTab();
                 scheduleNextSearch(4000);
             } else {
                 widget.badge = 'Off';
                 widget.label = 'Off';
-				if (!usingAustralis)
-					widget.port.emit("UpdateText", 'TMN: Off');
             }
 
             windows.on('close', function() {
