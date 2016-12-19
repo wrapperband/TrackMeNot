@@ -1,7 +1,7 @@
 #TrackMeNot
 A security / privacy add-on Firefox edition
 
-Track me not initiates searches based on rss feeds to supply key words. It can be used to generate some interesting "random" searches of the internet or "noise" in searches and web interaction to reduce quality of data stored by profilers.
+Track me not initiates searches based on RSS feeds to supply key words. It can be used to generate some interesting "random" searches of the internet or "noise" in searches and web interaction to reduce quality of data stored by profilers.
 
 
 TrackMeNot contains many hard coded variables. This extended version documents how to run a modified version and the changes you can make to include your own customisation.
@@ -10,7 +10,7 @@ Currently firefox add-ons are signed, so the aim would be to make all variables 
 
 ### Running a customised version of TrackMeNot
 
-Back-up your settings folder, under .mozilla in GNU/Linux. Or run the developer edition of firefox in a VM.
+Back-up your settings folder, under .mozilla in GNU/Linux. Or run the developer edition of Firefox in a VM.
 
 
 #### Install the developer edition of Firefox, to run unsigned applications.
@@ -23,7 +23,7 @@ change 'Value' from True to False
 
 #### TrackMeNot
 
-In firefox go to tools / add-ons and search and install TrackMeNot.  
+In Firefox go to tools / add-ons and search and install TrackMeNot.  
 
 
 ### Running your own custom version
@@ -120,6 +120,7 @@ function initOptions() {
 
 Showing some slight modifications to initial values to customise personal versions. These should be automatically, or personally configurable,, the blacklist defaults and function requires further audit and consideration.
 
+
 #### Customising number of search terms to use
 
 trackmenot.js function doSearch()    
@@ -172,6 +173,16 @@ TrackMeNot is modified with a line from the burst mode to randomise all further 
 
 
 Note, it is also possible to customise error delays and the burst variability in this function.
+		
+#### function scheduleNextSearch(delay)
+
+The scheduleNextSearch has been updated to fix some Javascript errors and to start to randomise all search periodicity, whilst keeping to the goal amount of searches per second.
+		
+The calculation for extending the delay on error has been modified so there is always some delay. [tmn_errTimeout]
+
+Missing brackets were added to return;
+
+Zeros were also put before the fractions, e.g. 0.5 to comply with Javascript standards.
 		
 		
 ### TrackMeNot Audit : Comparison of Source Code with released version.  
