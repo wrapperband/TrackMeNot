@@ -1017,14 +1017,18 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
         if (!enabled)
              {
                   return;
-              }
+             }
         if (delay > 0) {
             if (!isBursting()) { // randomize to approach target frequency
                 var offset = delay * (Math.random() / 2);
                 delay = parseInt(delay) + offset;
-            } else { // just simple randomize during a burst           
+            } else { // just simple randomize during a burst      
                 delay += delay * (Math.random() - 0.5);
             }
+        }
+        else
+        {
+            return; // needs a log error message if delay = 0
         }
         if (isBursting())
             engine = burstEngine;
