@@ -1015,9 +1015,9 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
 
     function scheduleNextSearch(delay) {
         if (!enabled)
-             { 
+             {
                   return;
-                  }
+              }
         if (delay > 0) {
             if (!isBursting()) { // randomize to approach target frequency
                 var offset = delay * (Math.random() / 2);
