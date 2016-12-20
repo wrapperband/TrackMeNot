@@ -993,15 +993,18 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             scheduleNextSearch(pauseAfterError);
         return false;
     }
-
+    
     function reschedule() {
         var delay = tmn_timeout;
 
         if (tmn_scheduledSearch)
+            {
             return;
+            }    
         else
+            {    
             tmn_scheduledSearch = true;
-
+            }
         if (isBursting()) { // schedule for burs 
             delay = Math.min(delay, burstTimeout);
             scheduleNextSearch(delay);
