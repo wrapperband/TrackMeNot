@@ -1022,7 +1022,7 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             if (!isBursting()) { // randomize to approach target frequency
                 var offset = delay * (Math.random() / 2);
                 delay = parseInt(delay) + offset;
-            } else { // just simple randomize during a burst      
+            } else { // just simple randomize during a burst
                 delay += delay * (Math.random() - 0.5);
             }
         }
@@ -1036,7 +1036,7 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             }
         else
             {
-            engine = chooseEngine(searchEngines.split(','));
+            engine = chooseEngine(sEngines.split(','));
             debug('NextSearchScheduled on: ' + engine);
             tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay + (delay * (Math.random() * 2)));
 	    delay += delay * (Math.random() - 0.5);
