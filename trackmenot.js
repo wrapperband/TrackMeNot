@@ -1031,15 +1031,19 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             return; // needs a log error message if delay = 0
         }
         if (isBursting())
+            {
             engine = burstEngine;
+            }
         else
+            {
             engine = chooseEngine(searchEngines.split(','));
-        debug('NextSearchScheduled on: ' + engine);
-        tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay + (delay * (Math.random() * 2)));
-	delay += delay * (Math.random() - 0.5);
-        tmn_searchTimer = timer.setTimeout(doSearch, delay);
-        tmn_timeTillNextSearch = getTimeNow() + delay;
-        cout("Time till next search: "+ delay)
+            debug('NextSearchScheduled on: ' + engine);
+            tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay + (delay * (Math.random() * 2)));
+	    delay += delay * (Math.random() - 0.5);
+            tmn_searchTimer = timer.setTimeout(doSearch, delay);
+            tmn_timeTillNextSearch = getTimeNow() + delay;
+            cout("Time till next search: "+ delay);
+            }
     }
 
     function enterBurst(burst_engine) {
