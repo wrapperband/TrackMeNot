@@ -995,8 +995,8 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
     }
     
     function reschedule() {
+        "use strict";
         var delay = tmn_timeout;
-
         if (tmn_scheduledSearch)
             {
             return;
@@ -1005,7 +1005,7 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             {    
             tmn_scheduledSearch = true;
             }
-        if (isBursting()) { // schedule for burs 
+        if (isBursting()) {      // schedule for burst
             delay = Math.min(delay, burstTimeout);
             scheduleNextSearch(delay);
             tmn_mode = 'burst';
