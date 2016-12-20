@@ -121,7 +121,7 @@ function TMNShowValidatedFeeds(feedObject) {
 
 function TMNShowLog(tmnlogs) {
     var logs = tmnlogs.logs
-    var htmlStr = '<div style="height:1000px;overflow:auto;"><table witdh=500 cellspacing=3 bgcolor=white  frame=border>';
+    var htmlStr = '<div style="height:1000px;overflow:auto;"><table width=500 cellspacing=3 bgcolor=white  frame=border>';
     htmlStr += '<thead><tr align=left>';
     htmlStr += '<th>Engine</th>';
     htmlStr += '<th>Mode</th>';
