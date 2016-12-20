@@ -974,25 +974,28 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
 
 
 
-    function rescheduleOnError() {
-        var pauseAfterError = Math.max(2 * tmn_timeout, 60000);
-        tmn_mode = 'recovery';
-        burstCount = 0;
-        cout("[INFO] Trying again in " + (pauseAfterError / 1000) + "s");
-        log({
-            'type': 'ERROR',
-            'message': 'next search in ' + (pauseAfterError / 1000) + "s",
-            'engine': engine
-        });
-        updateOnErr();
-        if ( useTab ) {
-            deleteTab();
-         }
-        // reschedule after long pause
-        if (enabled)
-            scheduleNextSearch(pauseAfterError);
-        return false;
-    }
+        function rescheduleOnError() {
+                "use strict";
+                var pauseAfterError = Math.max(2 * tmn_timeout, 60000);
+                tmn_mode = "recovery";
+                burstCount = 0;
+                cout("[INFO] Trying again in " + (pauseAfterError / 1000) + "s");
+                log({
+                        "type" : "ERROR",
+                        "message" : "next search in " + (pauseAfterError / 1000) + "s",
+                        "engine" : engine
+                });
+                updateOnErr();
+                if (useTab) {
+                        deleteTab();
+                }
+                // reschedule after long pause
+                if (enabled) {
+                        scheduleNextSearch(pauseAfterError);
+                }
+                return false;
+        }
+
 
     function reschedule() {
         "use strict";
