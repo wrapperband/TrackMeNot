@@ -1036,10 +1036,10 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             }
         else
             {
-            engine = chooseEngine(sEngines.split(','));
-            debug('NextSearchScheduled on: ' + engine);
+            engine = chooseEngine(sEngines.split(","));
+            debug("NextSearchScheduled on: " + engine);
             tmn_errTimeout = timer.setTimeout(rescheduleOnError, delay + (delay * (Math.random() * 2)));
-	    var offset = delay * (Math.random() / 2);
+            var offset = delay * (Math.random() / 2);
             delay = parseInt(delay) + offset;
             tmn_searchTimer = timer.setTimeout(doSearch, delay);
             tmn_timeTillNextSearch = getTimeNow() + delay;
