@@ -993,28 +993,25 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
             scheduleNextSearch(pauseAfterError);
         return false;
     }
-    
+
     function reschedule() {
         "use strict";
         var delay = tmn_timeout;
-        if (tmn_scheduledSearch)
-            {
+        if (tmn_scheduledSearch) {
             return;
-            }    
-        else
-            {    
+        } else {
             tmn_scheduledSearch = true;
             }
         if (isBursting()) {      // schedule for burst
             delay = Math.min(delay, burstTimeout);
             scheduleNextSearch(delay);
-            tmn_mode = 'burst';
+            tmn_mode = "burst";
             burstCount--;
-        } else { // Not bursting, schedule per usual
-            tmn_mode = 'timed';
+         } else { // Not bursting, schedule per usual
+            tmn_mode = "timed";
             scheduleNextSearch(delay);
-        }
-    }
+            }
+     }
 
     function scheduleNextSearch(delay) {
         if (!enabled)
