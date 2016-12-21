@@ -168,63 +168,63 @@ function TMNShowEngines(engines) {
 
 function TMNShowQueries(param) {
     var queries = param.queries.split(",");
-	var sources = param.sources;
-	var htmlStr =  '<a href="#dhs">DHS</a> | <a href="#rss"> RSS </a> | <a href="#popular"> Popular </a>|<a href="#extracted"> Extracted</a>';
-	htmlStr += '<div style="height:1000px;overflow:auto;"><table width=500 cellspacing=3 bgcolor=white  frame=border>';
+        var sources = param.sources;
+        var htmlStr =  '<a href="#dhs">DHS</a> | <a href="#rss"> RSS </a> | <a href="#popular"> Popular </a>|<a href="#extracted"> Extracted</a>';
+        htmlStr += '<div style="height:1000px;overflow:auto;"><table width=500 cellspacing=3 bgcolor=white  frame=border>';
     if ( sources.dhs ) {
-		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
-		htmlStr += '<td > DHS Monitored <td>';
-		htmlStr += '<a name="dhs"></a>';
-		htmlStr += '</tr>';
-		for (var i=0;  i<sources.dhs.length ; i++) {
-			htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
-			htmlStr += '<td>' +sources.dhs[i].category_name+ '<td>'
-			htmlStr += '</tr>';
-			for (var j=0;  j< sources.dhs[i].words.length ; j++) {
-				htmlStr += '<tr style="color:Black">';
-				htmlStr += '<td>' +sources.dhs[i].words[j]+ '<td>';
-				htmlStr += '</tr>';
-			}
-		}
+                htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
+                htmlStr += '<td > DHS Monitored <td>';
+                htmlStr += '<a name="dhs"></a>';
+                htmlStr += '</tr>';
+                for (var i=0;  i<sources.dhs.length ; i++) {
+                        htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
+                        htmlStr += '<td>' +sources.dhs[i].category_name+ '<td>'
+                        htmlStr += '</tr>';
+                        for (var j=0;  j< sources.dhs[i].words.length ; j++) {
+                                htmlStr += '<tr style="color:Black">';
+                                htmlStr += '<td>' +sources.dhs[i].words[j]+ '<td>';
+                                htmlStr += '</tr>';
+                        }
+                }
     }
-	if ( sources.rss ) {
-		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
-		htmlStr += '<td > RSS <td>';
-		htmlStr += '<a name="rss"></a>';
-		htmlStr += '</tr>';
-		for (var i=0;  i<sources.rss.length ; i++) {
-			htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
-			htmlStr += '<td>' +sources.rss[i].name+ '<td>'
-			htmlStr += '</tr>';
-			for (var j=0;  j< sources.rss[i].words.length ; j++) {
-				htmlStr += '<tr style="color:Black">';
-				htmlStr += '<td>' +sources.rss[i].words[j]+ '<td>'
-				htmlStr += '</tr>';
-			}
-		}
+        if ( sources.rss ) {
+                htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
+                htmlStr += '<td > RSS <td>';
+                htmlStr += '<a name="rss"></a>';
+                htmlStr += '</tr>';
+                for (var i=0;  i<sources.rss.length ; i++) {
+                        htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
+                        htmlStr += '<td>' +sources.rss[i].name+ '<td>'
+                        htmlStr += '</tr>';
+                        for (var j=0;  j< sources.rss[i].words.length ; j++) {
+                                htmlStr += '<tr style="color:Black">';
+                                htmlStr += '<td>' +sources.rss[i].words[j]+ '<td>'
+                                htmlStr += '</tr>';
+                        }
+                }
     }
-	if ( sources.zeitgeist ) {
-		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
-		htmlStr += '<td > Popular <td>'
-		htmlStr += '<a name="popular"></a>';
-		htmlStr += '</tr>';
-		for (var i=0;  i< sources.zeitgeist.length ; i++) {
-			htmlStr += '<tr style="color:Black">';
-			htmlStr += '<td>' +sources.zeitgeist[i]+ '<td>';
-			htmlStr += '</tr>';
-		}
+        if ( sources.zeitgeist ) {
+                htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
+                htmlStr += '<td > Popular <td>'
+                htmlStr += '<a name="popular"></a>';
+                htmlStr += '</tr>';
+                for (var i=0;  i< sources.zeitgeist.length ; i++) {
+                        htmlStr += '<tr style="color:Black">';
+                        htmlStr += '<td>' +sources.zeitgeist[i]+ '<td>';
+                        htmlStr += '</tr>';
+                }
     }
-	if ( sources.extracted ) {
-		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
-		htmlStr += '<td > Extracted <td>';
-		htmlStr += '<a name="extracted"></a>';
-		htmlStr += '</tr>';
-		for (var i=0; i<sources.extracted.length ; i++) {
-			htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
-			htmlStr += '<td>' +sources.extracted[i]+ '<td>';
-			htmlStr += '</tr>';
-		}
-	}
+        if ( sources.extracted ) {
+                htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
+                htmlStr += '<td > Extracted <td>';
+                htmlStr += '<a name="extracted"></a>';
+                htmlStr += '</tr>';
+                for (var i=0; i<sources.extracted.length ; i++) {
+                        htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
+                        htmlStr += '<td>' +sources.extracted[i]+ '<td>';
+                        htmlStr += '</tr>';
+                }
+        }
     htmlStr += '</table></div>';
     $('#tmn_logs_container').html(htmlStr);
 }
