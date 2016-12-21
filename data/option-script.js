@@ -259,11 +259,11 @@ function saveOptions() {
 }
 
 
-self.port.on("TMNShowValidatedFeed",  TMNShowValidatedFeeds) ;
-self.port.on("TMNSetOptionsMenu", TMNSetOptionsMenu)
-self.port.on("TMNSendLogs", TMNShowLog)
-self.port.on("TMNSendQueries", TMNShowQueries)
-self.port.on("TMNSendEngines", TMNShowEngines)
+self.port.on("TMNShowValidatedFeed",  TMNShowValidatedFeeds);
+self.port.on("TMNSetOptionsMenu", TMNSetOptionsMenu);
+self.port.on("TMNSendLogs", TMNShowLog);
+self.port.on("TMNSendQueries", TMNShowQueries);
+self.port.on("TMNSendEngines", TMNShowEngines);
 
 
 
