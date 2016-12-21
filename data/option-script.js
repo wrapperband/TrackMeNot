@@ -182,7 +182,7 @@ function TMNShowQueries(param) {
 			htmlStr += '</tr>';
 			for (var j=0;  j< sources.dhs[i].words.length ; j++) {
 				htmlStr += '<tr style="color:Black">';
-				htmlStr += '<td>' +sources.dhs[i].words[j]+ '<td>'
+				htmlStr += '<td>' +sources.dhs[i].words[j]+ '<td>';
 				htmlStr += '</tr>';
 			}
 		}
@@ -210,18 +210,18 @@ function TMNShowQueries(param) {
 		htmlStr += '</tr>';
 		for (var i=0;  i< sources.zeitgeist.length ; i++) {
 			htmlStr += '<tr style="color:Black">';
-			htmlStr += '<td>' +sources.zeitgeist[i]+ '<td>'
+			htmlStr += '<td>' +sources.zeitgeist[i]+ '<td>';
 			htmlStr += '</tr>';
 		}
     }
-	if ( sources.extracted ) {	
+	if ( sources.extracted ) {
 		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
 		htmlStr += '<td > Extracted <td>';
 		htmlStr += '<a name="extracted"></a>';
 		htmlStr += '</tr>';
 		for (var i=0; i<sources.extracted.length ; i++) {
 			htmlStr += '<tr style="color:Black"  bgcolor=#F0F0F0 align=center>';
-			htmlStr += '<td>' +sources.extracted[i]+ '<td>'
+			htmlStr += '<td>' +sources.extracted[i]+ '<td>';
 			htmlStr += '</tr>';
 		}
 	}
