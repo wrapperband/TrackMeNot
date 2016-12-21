@@ -498,8 +498,9 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
 
 
     function iniTab(tab) {
+        "use strict";
         worker_tab = tab.attach({contentScriptFile: search_script});
-		cout("activating the tmn tab")
+		cout("activating the tmn tab");
         tab.on("activate", function() {
             notifications.notify({
                 text: "This tab shows TrackMeNot's auto-generated searches",
