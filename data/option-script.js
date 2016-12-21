@@ -167,9 +167,9 @@ function TMNShowEngines(engines) {
 }
 
 function TMNShowQueries(param) {
-    var queries = param.queries.split(',');
+    var queries = param.queries.split(",");
 	var sources = param.sources;
-	var htmlStr =  '<a href="#dhs">DHS</a> | <a href="#rss"> RSS </a> | <a href="#popular"> Popular </a>|<a href="#extracted"> Extracted</a>'
+	var htmlStr =  '<a href="#dhs">DHS</a> | <a href="#rss"> RSS </a> | <a href="#popular"> Popular </a>|<a href="#extracted"> Extracted</a>';
 	htmlStr += '<div style="height:1000px;overflow:auto;"><table width=500 cellspacing=3 bgcolor=white  frame=border>';
     if ( sources.dhs ) {
 		htmlStr += '<tr style="color:Black"  bgcolor=#D6E0E0 align=center>';
