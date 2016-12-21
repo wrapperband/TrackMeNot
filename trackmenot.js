@@ -955,19 +955,21 @@ const nodeFor = ({id}) =>  getMostRecentBrowserWindow().document.getElementById(
         }
     }
 
-
+    
     function queryToURL(url, query) {
-        if (Math.random() < 0.9)
+        "use strict";
+        if (Math.random() < 0.85) {
             query = query.toLowerCase();
+        }
         var urlQuery = url.replace('|', query);
         urlQuery = urlQuery.replace(/ /g, '+');
         var encodedUrl = encodeURI(urlQuery);
         encodedUrl = encodedUrl.replace(/%253/g, "%3");
-
         return encodedUrl;
     }
 
     function updateCurrentURL(taburl) {
+        "use strict";
         currentTMNURL = taburl.url;
         debug("currentTMNURL is :" + currentTMNURL);
     }
