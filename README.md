@@ -1,5 +1,5 @@
 #TrackMeNot
-A security / privacy add-on Firefox edition
+**A security / privacy add-on Firefox edition**
 
 Track me not initiates searches based on RSS feeds to supply key words. It can be used to generate some interesting "random" searches of the internet or "noise" in searches and web interaction to reduce quality of data stored by profilers.
 
@@ -21,6 +21,7 @@ scroll down to xpinstall.signatures.required
 
 change 'Value' from True to False
 
+
 #### TrackMeNot
 
 In Firefox go to tools / add-ons and search and install TrackMeNot.  
@@ -31,6 +32,7 @@ In Firefox go to tools / add-ons and search and install TrackMeNot.
 By making it easier to customise all variables is the first step to increasing the security of TrackMeNot. The initial audit shows too many variables are not customise-able thus making the bots actions more trackable.
 
 Without changing the code a new user should update the default blacklist, the RSS feeds are also important to generate web searches.
+
 
 #### Updateable files
 
@@ -58,15 +60,18 @@ It is relatively easy to copy in an updated version of trackmenot.js . This file
 
 Edit the file in the TrackMeNot, then copy it into the compressed .xpi file.
 
+
 #### Editing trackmenot.js  var zeitgeist
 
 The trackmenot.js is a text file contains a number of variables to tweak, the first is **var zeitgeist** an array of "influential" words (need audit) 
+
 
 ##### timeout
 
 The next variable to adjust is timeout. Any common factor can indicate usage, a range is harder to eliminate. When adjusting less important, or harder to monitor parameters consider that the change from norm could also be trackable. May be worth lengthening. 
 
 var tmn_timeout = 6000;
+
 
 ##### burstTimeout
 
@@ -78,6 +83,7 @@ var burstTimeout = 6000;
 #### Editing options.html
 
 The options.html is the next file which can be adjusted.
+
 
 ##### zeitgeist
 
@@ -94,7 +100,8 @@ On line 157 of options.html you can see the modified time stamps from the  origi
                                                         <option data-l10n-id="tmn.option.freq.1ph" id="t5" value="3600000"> </option>
 </select>
 
-Customise the repetition times, in the future the system could also vary these times to make it a less "track-able" feature. In the future simply adding or removing  a small random rmber will amke each person and session have different base timings. The noise will make it more difficult to identify. 
+Customise the repetition times, in the future the system could also vary these times to make it a less "track-able" feature. In the future simply adding or removing  a small random rmber will make each person and session have different base timings. The noise will make it more difficult to identify. 
+
 
 #### Adding none search links
 
@@ -144,6 +151,7 @@ if (Math.random() < 0.9)
 
 A randomising function that should be variable, or adjusted from the default value.
 
+
 #### Customising the Tab activated message
 
 When a Tab search is taking place a message tells it is TrackMeNot's Tab. The update includes a more positive Tab view searches message in file trackmenot.js.
@@ -173,7 +181,8 @@ TrackMeNot is modified with a line from the burst mode to randomise all further 
 
 
 Note, it is also possible to customise error delays and the burst variability in this function.
-		
+
+
 #### function scheduleNextSearch(delay)
 
 The scheduleNextSearch has been updated to fix some Javascript errors and to start to randomise all search periodicity, whilst keeping to the goal amount of searches per second.
@@ -182,7 +191,7 @@ The calculation for extending the delay on error has been modified so there is a
 
 Missing brackets were added to return;
 
-Zeros were also put before the fractions, e.g. 0.5 to comply with Javascript standards.
+Zeros were also put before the fractions, e.g. 0.5 to comply with Javascript standards. A return  was added to the  function for the case delay = 0.
 		
 		
 ### TrackMeNot Audit : Comparison of Source Code with released version.  
@@ -210,24 +219,26 @@ Firefox release
 		}
 		return false;
 
+		
 #### Tracking the Trackers
 
 The help button in the default version points to an external trackable web site. This is adjusted to a  local file, it is possible to download the help through Tor and replace the local file.
-
-
 
 
 #### Trouble
 
 Don't let the power get to your head and set click rates too high.
 
+
 #### List of alternate RSS feeds
 
 https://ec.europa.eu/research/index.cfm?pg=rss
 
+
 #### Anti Bot detection
 
 Some movement of mouse is required on each page. Scroll down searches.
+
 
 #### How and where are custom settings stored in TrackMeNot
 
