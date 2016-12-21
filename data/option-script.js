@@ -231,10 +231,11 @@ function TMNShowQueries(param) {
 
 
 function saveOptions() {
+    "use strict";
     var options = {};
     options.enabled = $("#trackmenot-opt-enabled").is(':checked');
 
-    cout("Saved Enabled: " + options.enabled)
+    cout("Saved Enabled: " + options.enabled);
     options.useTab = $("#trackmenot-opt-useTab").is(':checked');
     options.burstMode = $("#trackmenot-opt-burstMode").is(':checked');
     options.disableLogs = $("#trackmenot-opt-disable-logs").is(':checked');
@@ -245,11 +246,11 @@ function saveOptions() {
     var engines = '';
     var list = $("#search-engine-list:checked");
     $("#search-engine-list :checked").each(function() {
-        engines += ($(this).val()) + ","
-    })
-    if (engines.length > 0)
+        engines += ($(this).val()) + ",";
+    });
+    if (engines.length > 0) {
         engines = engines.substring(0, engines.length - 1);
-
+        }
     options.searchEngines = engines;
     options.feedList = $("#trackmenot-seed").val();
     options.use_black_list = $("#trackmenot-use-blacklist").is(':checked');
