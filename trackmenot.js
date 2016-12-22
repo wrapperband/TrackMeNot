@@ -1,18 +1,18 @@
 /*******************************************************************************    
- This file is part of TrackMeNot (Chrome version).
+This file is part of TrackMeNot (Firefox version).
  
- TrackMeNot is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation,  version 2 of the License.
+TrackMeNot is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation,  version 2 of the License.
  
- TrackMeNot is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+TrackMeNot is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
  
- You should have received a copy of the GNU General Public License
- along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
- ********************************************************************************/
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**************************************************************************/
 const Request = require("sdk/request").Request;
 const tabs = require("sdk/tabs");
 const URL = require("sdk/url").URL;
@@ -25,11 +25,9 @@ const windows = require("sdk/windows").browserWindows;
 const notifications = require("sdk/notifications");
 const _ = require("sdk/l10n").get;
 const sp = require("sdk/simple-prefs");
-const { id: addonID, data } = require("sdk/self");
-
+const { id: addonID, data} = require("sdk/self");
 const xulapp = require("sdk/system/xul-app");
 const { getMostRecentBrowserWindow } = require("sdk/window/utils");
-
 var {ToggleButton} = require("sdk/ui/button/toggle");
 
 if (!TRACKMENOT)
